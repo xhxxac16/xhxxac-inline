@@ -1,0 +1,44 @@
+{
+  "name": "grunt-xhxxac-inline",
+  "description": "inline custom",
+  "version": "0.1.0",
+  "homepage": "https://github.com/xhxxac16/xhxxac-inline",
+  "author": {
+    "name": "Amanda",
+    "email": "xhxxac16@163.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xhxxac16/xhxxac-inline.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xhxxac16/xhxxac-inline/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/xhxxac16/xhxxac-inline/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "^0.9.2",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-nodeunit": "^0.3.3",
+    "grunt-contrib-htmlmin": "^2.4.0",
+    "grunt": "~0.4.5"
+  },
+  "keywords": [
+    "gruntplugin"
+  ],
+  "dependencies": {
+    "clean-css": "1.1.7",
+    "datauri": "~0.2.0",
+    "uglify-js": "2.4.1"
+  }
+}
