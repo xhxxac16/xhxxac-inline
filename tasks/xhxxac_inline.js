@@ -103,13 +103,14 @@ module.exports = function(grunt) {
 		if(relativeTo){
 			filepath = filepath.replace(/[^\/]+\//, relativeTo);
 		}
+		if(fileContent.indexOf(options.mark)!=-1){
+			fileContent = fileContent.replace(/\<(script|style).+?__remove((.|\s)*?)\<\/(script|style)\>/gi, '');
+		}
 		var regNoHttp = /<inline.+?src=["'](?!http:\/\/)([^"']+?)["']\s*?\/>/g;
 
 		fileContent = fileContent.replace(regNoHttp, function(matchedWord, src){
 			var ret = matchedWord;
-			if(ret.indexOf(options.mark)!=-1){
-				ret = ret.replace(/\<(script|style).+?__remove((.|\s)*?)\<\/(script|style)\>/gi, '');
-			}
+
 			if(isRemotePath(src) || !grunt.file.isPathAbsolute(src)){
 
 				var inlineFilePath = path.resolve( path.dirname(filepath), src );
@@ -134,6 +135,9 @@ module.exports = function(grunt) {
 				}else{
 					grunt.log.error("Couldn't find " + inlineFilePath + '!');
 				}
+			}
+			if(ret.indexOf(options.mark)!=-1){
+				ret = ret.replace(/\<(script|style).+?__remove((.|\s)*?)\<\/(script|style)\>/gi, '');
 			}
 			return ret;
 		}).replace(/<script.+?src=["']([^"']+?)["'].*?>\s*<\/script>/g, function(matchedWord, src){
