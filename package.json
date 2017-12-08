@@ -3,13 +3,10 @@
   "description": "inline custom",
   "version": "0.1.0",
   "homepage": "https://github.com/xhxxac16/xhxxac-inline",
-  "author": {
-    "name": "Amanda",
-    "email": "xhxxac16@163.com"
-  },
+  "author": "Amanda <xhxxac16@163.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/xhxxac16/xhxxac-inline.git"
+    "url": "git+https://github.com/xhxxac16/xhxxac-inline.git"
   },
   "bugs": {
     "url": "https://github.com/xhxxac16/xhxxac-inline/issues"
@@ -40,5 +37,10 @@
     "clean-css": "1.1.7",
     "datauri": "~0.2.0",
     "uglify-js": "2.4.1"
-  }
+  },
+  "main": "Gruntfile.js",
+  "directories": {
+    "test": "test"
+  },
+  "license": "ISC"
 }

@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 	var datauri = require('datauri');
 	var UglifyJS = require("uglify-js");
 	var CleanCSS = require('clean-css');
-
+	// from grunt-inline.js in grunt-inline
 	grunt.registerMultiTask('xhxxac_inline', "Replaces or Remove <link>, <script> and <img> tags to their inline contents", function() {
 
 		var options = this.options({tag: '__inline', mark: '__remove'}),
@@ -259,9 +259,9 @@ module.exports = function(grunt) {
 	}
 
 	function css(filepath, fileContent, relativeTo, options) {
-			if(relativeTo){
-					filepath = filepath.replace(/[^\/]+\//g, relativeTo);
-			}
+		if(relativeTo){
+			filepath = filepath.replace(/[^\/]+\//g, relativeTo);
+		}
 
 		fileContent = fileContent.replace(/url\(["']*([^)'"]+)["']*\)/g, function(matchedWord, imgUrl){
 			var newUrl = imgUrl;
